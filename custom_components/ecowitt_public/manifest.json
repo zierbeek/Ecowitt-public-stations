@@ -1,0 +1,11 @@
+{
+  "domain": "ecowitt_public",
+  "name": "Ecowitt Public Station",
+  "codeowners": ["@yourname"],
+  "config_flow": true,
+  "documentation": "https://github.com/yourname/ha-ecowitt-public",
+  "issue_tracker": "https://github.com/yourname/ha-ecowitt-public/issues",
+  "iot_class": "cloud_polling",
+  "requirements": [],
+  "version": "0.1.0"
+}

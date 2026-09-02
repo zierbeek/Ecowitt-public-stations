@@ -1,0 +1,38 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Add an Ecowitt station",
+        "description": "Enter your Ecowitt account's Application Key and API Key (from ecowitt.net > My Profile), plus the MAC address (Wi-Fi gateways) or IMEI (cellular gateways) of the station you want to pull data from. This can be your own station, or someone else's station that its owner has shared with your Ecowitt account. Ecowitt's API does not support searching for public stations by location — you need the specific MAC/IMEI.",
+        "data": {
+          "application_key": "Application Key",
+          "api_key": "API Key",
+          "mac": "Station MAC address (e.g. AA:BB:CC:DD:EE:FF)",
+          "imei": "Station IMEI (cellular gateways only)",
+          "station_name": "Friendly name (optional)"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Application Key or API Key was rejected by Ecowitt.",
+      "invalid_device": "That MAC/IMEI wasn't found, or isn't shared with this Ecowitt account.",
+      "rate_limited": "Ecowitt's daily API call limit has been reached for this key.",
+      "cannot_connect": "Could not reach api.ecowitt.net.",
+      "mac_or_imei_required": "Enter either a MAC address or an IMEI.",
+      "unknown": "Unexpected error."
+    },
+    "abort": {
+      "already_configured": "This station is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Ecowitt station options",
+        "data": {
+          "scan_interval": "Polling interval (minutes)"
+        }
+      }
+    }
+  }
+}

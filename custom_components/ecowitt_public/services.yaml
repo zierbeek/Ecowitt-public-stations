@@ -1,0 +1,44 @@
+get_history:
+  name: Get historical data
+  description: >-
+    Fetch historical weather data for a configured Ecowitt station between
+    two dates. Returns the raw response as service response data (View in
+    Developer Tools > Actions, or use in a script/automation with
+    response_variable). Ecowitt retains 5-minute data for roughly the last
+    90 days and 30-minute data for roughly the last year; older/finer
+    combinations will be rejected by their API.
+  fields:
+    mac:
+      name: Station MAC or IMEI
+      description: The MAC (or IMEI) of a station you've already added as an integration entry.
+      required: true
+      example: "AA:BB:CC:DD:EE:FF"
+      selector:
+        text:
+    start_date:
+      name: Start date
+      description: "Start of the range, format YYYY-MM-DD or YYYY-MM-DD HH:MM:SS."
+      required: true
+      example: "2026-08-01"
+      selector:
+        text:
+    end_date:
+      name: End date
+      description: "End of the range, format YYYY-MM-DD or YYYY-MM-DD HH:MM:SS."
+      required: true
+      example: "2026-08-07"
+      selector:
+        text:
+    cycle_type:
+      name: Cycle type
+      description: Data resolution.
+      required: false
+      default: auto
+      selector:
+        select:
+          options:
+            - "auto"
+            - "5min"
+            - "30min"
+            - "240min"
+            - "1day"
